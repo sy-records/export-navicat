@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+require 'vendor/autoload.php';
+
+use Luffy\ExportNavicat\Command\DecryptCommand;
+use Luffy\ExportNavicat\Command\ConnectionCommand;
+use Inhere\Console\Application;
+
+$meta = [
+    'name'    => 'Export Navicat',
+    'version' => '1.0.0',
+];
+
+$app = new Application($meta);
+$app->command(DecryptCommand::class);
+$app->command(ConnectionCommand::class);
+$app->run();

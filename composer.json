@@ -1,0 +1,20 @@
+{
+    "name": "sy-records/export-navicat",
+    "description": "Get the contents of the Navicat backup file and show the password.",
+    "type": "project",
+    "require": {
+        "inhere/console": "^4.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Luffy\\ExportNavicat\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luffy",
+            "email": "lufei@simps.io"
+        }
+    ]
+}
