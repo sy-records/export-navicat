@@ -4,16 +4,22 @@ namespace Luffy\ExportNavicat;
 
 class Connection
 {
-    public function __construct($ncxFile, $version = 12)
+    protected string $file;
+
+    protected int $version;
+
+    protected Password $password;
+
+    public function __construct(string $file, int $version = 12)
     {
-        $this->ncxFile = $ncxFile;
+        $this->file = $file;
         $this->version = $version;
         $this->password = new Password($version);
     }
 
     public function getConnections()
     {
-        $xml = simplexml_load_file($this->ncxFile);
+        $xml = simplexml_load_file($this->file);
         $connections = [];
         foreach ($xml->Connection as $connection) {
             $attributes = $connection->attributes();
